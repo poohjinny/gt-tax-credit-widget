@@ -199,8 +199,7 @@
 /* Advanced panel + custom checkbox */
 .widget .advanced {
   margin-top: 2.25rem;
-  padding: 1rem 0 0;
-  border-top: 1px solid #eee;
+  padding: 0;
 }
 
 .widget .advanced__legend {
@@ -270,20 +269,17 @@
   border-color: #000;
 }
 
-.widget
-  .checkbox-field__native:focus-visible
-  + .checkbox-field__label
-  .checkbox-field__box {
+.widget .checkbox-field__native:focus-visible+.checkbox-field__label .checkbox-field__box {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
 
-.widget .checkbox-field__native:checked + .checkbox-field__label .checkbox-field__box {
+.widget .checkbox-field__native:checked+.checkbox-field__label .checkbox-field__box {
   background: #1a1a1a;
   border-color: #1a1a1a;
 }
 
-.widget .checkbox-field__native:checked + .checkbox-field__label:hover .checkbox-field__box {
+.widget .checkbox-field__native:checked+.checkbox-field__label:hover .checkbox-field__box {
   background: #333;
   border-color: #333;
 }
