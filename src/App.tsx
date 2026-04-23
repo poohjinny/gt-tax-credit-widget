@@ -1,9 +1,11 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { calculateTaxCredit } from './lib/api';
 import { COPY } from './lib/copy';
+import { getOrgLogoSrc, parseOrgFromSearch } from './lib/orgConfig';
 import { PROVINCE_KEYS, provinceLabel } from './lib/provinces';
 import type { Language, TaxCreditData } from './types/taxCredit';
 import './App.css';
+import './org-themes.css';
 
 function formatCad(value: number | null | undefined, lang: Language): string {
   if (value == null || Number.isNaN(value)) return COPY[lang].na;
@@ -31,6 +33,14 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<TaxCreditData | null>(null);
+
+  const orgId = useMemo(
+    () =>
+      typeof window !== 'undefined'
+        ? parseOrgFromSearch(window.location.search)
+        : null,
+    [],
+  );
 
   const donation = useMemo(() => parseMoney(donationRaw), [donationRaw]);
   const taxableIncome = useMemo(() => {
@@ -63,8 +73,21 @@ export default function App() {
   }
 
   return (
-    <div className='widget'>
+    <div className='widget' data-org={orgId ?? undefined}>
       <header className='widget__header'>
+        {orgId ? (
+          <div className='widget__logo'>
+            <img
+              className='widget__logo-img'
+              src={getOrgLogoSrc(orgId, lang)}
+              alt={t.orgLogoAlt}
+              width={800}
+              height={200}
+              loading='eager'
+              decoding='async'
+            />
+          </div>
+        ) : null}
         <h1 className='widget__title heading heading--primary'>{t.title}</h1>
         <p className='widget__subtitle'>{t.subtitle}</p>
         <p className='widget__disclaimer paragraph' role='note'>

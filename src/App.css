@@ -12,6 +12,17 @@
   margin-bottom: 2rem;
 }
 
+.widget__logo {
+  margin: 0 0 1.25rem;
+}
+
+.widget__logo-img {
+  display: block;
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+}
+
 /* gt-app `heading.css`: .heading + .heading--primary */
 .widget h1.widget__title.heading {
   display: block;

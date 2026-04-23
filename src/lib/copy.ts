@@ -19,6 +19,7 @@ type Copy = {
   total: string;
   na: string;
   errorPrefix: string;
+  orgLogoAlt: string;
 };
 
 export const COPY: Record<Language, Copy> = {
@@ -47,6 +48,7 @@ export const COPY: Record<Language, Copy> = {
     total: 'Total estimated credit',
     na: '—',
     errorPrefix: 'Could not calculate:',
+    orgLogoAlt: 'Organization logo',
   },
   fr: {
     title: 'Découvrez combien votre générosité vous rapporte',
@@ -74,5 +76,6 @@ export const COPY: Record<Language, Copy> = {
     total: 'Crédit total estimé',
     na: '—',
     errorPrefix: 'Impossible de calculer :',
+    orgLogoAlt: "Logo de l'organisme",
   },
 };

@@ -1,6 +1,9 @@
 # gt-tax-credit-widget
 
-Small **Vite + React + TypeScript** embed that calls **gt-api** `POST /calculator/calculate/` with `context.resource = tax-credit` and `country = CA`, matching the contract used by Giftabulator (`context` + `data` JSON body).
+Small **Vite + React + TypeScript** embed that calls **gt-api**
+`POST /calculator/calculate/` with `context.resource = tax-credit` and
+`country = CA`, matching the contract used by Giftabulator (`context` + `data`
+JSON body).
 
 ## Setup
 
@@ -9,15 +12,26 @@ npm install
 cp .env.example .env
 ```
 
-Set `VITE_API_BASE_URL` to your API root **including** the version path, for example:
+Set `VITE_API_BASE_URL` to your API root **including** the version path, for
+example:
 
 `http://your-api-host/v2.1`
 
 (no trailing slash required)
 
+## Organization theme (`?org=`)
+
+Add **`?org=dev`** to the page URL to apply the **dev** org theme and logo (gt-app
+`orgs/dev` primary `rgb(226, 56, 63)` and `public/org/dev/logo_en.svg` /
+`logo_fr.svg` by current language). Unknown `org` values fall back to the default
+look. Allowlisted ids live in `src/lib/orgConfig.ts`.
+
 ## Fonts
 
-UI typography matches **gt-app**: headings use **Google Sans**, body uses **Roboto**, self-hosted under `public/font/` (same `.ttf` files as `gt-app/asset/font/`). If those files are missing, copy `GoogleSans-*.ttf` and `Roboto-*.ttf` from gt-app into `public/font/` so `src/fonts.css` can load them.
+UI typography matches **gt-app**: headings use **Google Sans**, body uses
+**Roboto**, self-hosted under `public/font/` (same `.ttf` files as
+`gt-app/asset/font/`). If those files are missing, copy `GoogleSans-*.ttf` and
+`Roboto-*.ttf` from gt-app into `public/font/` so `src/fonts.css` can load them.
 
 ## Develop
 
@@ -25,7 +39,8 @@ UI typography matches **gt-app**: headings use **Google Sans**, body uses **Robo
 npm run dev
 ```
 
-Ensure **gt-api** allows your dev origin in `v2.1/config/cors.php` (e.g. `localhost` for Vite).
+Ensure **gt-api** allows your dev origin in `v2.1/config/cors.php` (e.g.
+`localhost` for Vite).
 
 ## Build
 
@@ -67,4 +82,5 @@ Use `--private` if you prefer. Or create an empty repo in the browser, then
 
 ## Repo hygiene
 
-Avoid workspace-wide globs like `**/*` at the project root: they traverse `node_modules` and can appear stuck. Prefer `src/**/*` or specific paths.
+Avoid workspace-wide globs like `**/*` at the project root: they traverse
+`node_modules` and can appear stuck. Prefer `src/**/*` or specific paths.

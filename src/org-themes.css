@@ -1,0 +1,78 @@
+/**
+ * org=dev — matches gt-app `orgs/dev/css/theme.css` primary:
+ * rgba(226, 56, 63)
+ */
+
+.widget[data-org='dev'] {
+  --org-primary: rgb(226, 56, 63);
+  --org-primary-hover: rgb(200, 45, 52);
+  --org-primary-mid: rgba(226, 56, 63, 0.35);
+  --org-primary-soft: rgba(226, 56, 63, 0.08);
+}
+
+.widget[data-org='dev'] .widget__form {
+  border-color: rgba(226, 56, 63, 0.22);
+}
+
+.widget[data-org='dev'] .button {
+  background-color: var(--org-primary);
+  border-bottom-color: var(--org-primary-mid);
+}
+
+.widget[data-org='dev'] .button:disabled {
+  background-color: var(--org-primary);
+  opacity: 0.5;
+}
+
+.widget[data-org='dev'] .button--submit:not(:disabled):hover {
+  background-color: var(--org-primary-hover);
+}
+
+.widget[data-org='dev'] .checkbox-field__native:checked + .checkbox-field__label .checkbox-field__box {
+  background: var(--org-primary);
+  border-color: var(--org-primary);
+}
+
+.widget[data-org='dev']
+  .checkbox-field__native:checked
+  + .checkbox-field__label:hover
+  .checkbox-field__box {
+  background: var(--org-primary-hover);
+  border-color: var(--org-primary-hover);
+}
+
+.widget[data-org='dev'] .field__input:not([disabled]):hover,
+.widget[data-org='dev'] .field__input:not([disabled]):focus {
+  border-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .field__select:not([disabled]):hover,
+.widget[data-org='dev'] .field__select:not([disabled]):focus {
+  border-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .field__select:not(:disabled):focus + .field__select-icon,
+.widget[data-org='dev'] .field:has(.field__select:not(:disabled)):hover .field__select-icon {
+  border-top-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .msg--info {
+  background: var(--org-primary-soft);
+  border: 1px solid rgba(226, 56, 63, 0.2);
+  border-radius: 1rem;
+}
+
+.widget[data-org='dev'] .results {
+  border-top-color: rgba(226, 56, 63, 0.2);
+}
+
+.widget[data-org='dev'] .results__row--total {
+  border-top-color: rgba(226, 56, 63, 0.2);
+}
+
+.widget[data-org='dev'] .field__control:has(.field__input:not(:disabled)):hover .field__label,
+.widget[data-org='dev'] .field__control:has(.field__input):focus-within .field__label,
+.widget[data-org='dev'] .field__control:has(.field__select:not(:disabled)):hover .field__label,
+.widget[data-org='dev'] .field__control:has(.field__select):focus-within .field__label {
+  color: var(--org-primary);
+}
