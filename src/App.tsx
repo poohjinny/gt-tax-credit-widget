@@ -67,7 +67,7 @@ export default function App() {
       <header className='widget__header'>
         <h1 className='widget__title'>{t.title}</h1>
         <p className='widget__subtitle'>{t.subtitle}</p>
-        <p className='widget__disclaimer' role='note'>
+        <p className='widget__disclaimer paragraph' role='note'>
           {t.disclaimer}
         </p>
       </header>
@@ -145,7 +145,10 @@ export default function App() {
                 checked={advanced}
                 onChange={(e) => setAdvanced(e.target.checked)}
               />
-              <label htmlFor='widget-advanced' className='checkbox-field__label'>
+              <label
+                htmlFor='widget-advanced'
+                className='checkbox-field__label'
+              >
                 <span className='checkbox-field__box' aria-hidden='true'>
                   {advanced ?
                     <svg

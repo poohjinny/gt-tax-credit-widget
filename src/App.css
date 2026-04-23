@@ -29,12 +29,14 @@
   font-weight: 400;
 }
 
-.widget__disclaimer {
+/* gt-app `paragraph.css` */
+.widget .widget__disclaimer.paragraph {
   margin: 0;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  color: #888;
+  color: #444;
+  font-size: 1em;
   font-weight: 300;
+  line-height: 2;
+  font-family: var(--font-body);
 }
 
 .widget__form {
