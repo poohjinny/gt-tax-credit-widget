@@ -5,12 +5,7 @@
   margin: 0 auto;
   padding: 1.5rem 1.25rem 2.5rem;
   text-align: left;
-  font-family:
-    Roboto,
-    'Segoe UI',
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: var(--font-body);
 }
 
 .widget__header {
@@ -19,6 +14,7 @@
 
 .widget__title {
   color: #000;
+  font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.25;
@@ -51,9 +47,9 @@
   border: none;
 }
 
-.widget .field + .field,
-.widget .fieldset + .field,
-.widget .field + .fieldset {
+.widget .field+.field,
+.widget .fieldset+.field,
+.widget .field+.fieldset {
   margin-top: 2.25rem;
 }
 
@@ -70,6 +66,7 @@
 .widget .field__label {
   width: fit-content;
   color: #aaa;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
@@ -175,7 +172,7 @@
   transition: border-color 0.2s;
 }
 
-.widget .field__select:not(:disabled):focus + .field__select-icon,
+.widget .field__select:not(:disabled):focus+.field__select-icon,
 .widget .field:has(.field__select:not(:disabled)):hover .field__select-icon {
   border-top-color: #000;
 }
@@ -199,7 +196,7 @@
   color: #000;
 }
 
-/* Advanced panel */
+/* Advanced panel + custom checkbox */
 .widget .advanced {
   margin-top: 2.25rem;
   padding: 1rem 0 0;
@@ -213,19 +210,85 @@
   font-weight: 400;
 }
 
-.widget .advanced__toggle {
+.widget .checkbox-field {
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.widget .checkbox-field__native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.widget .checkbox-field__label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.75rem;
   cursor: pointer;
+  user-select: none;
 }
 
-.widget .advanced__toggle-text {
+.widget .checkbox-field__box {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  background: #fff;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.widget .checkbox-field__check {
+  display: block;
+}
+
+.widget .checkbox-field__text {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.45;
   color: #000;
-  font-weight: 500;
 }
 
-.widget .advanced > .field {
+.widget .checkbox-field__label:hover .checkbox-field__box {
+  border-color: #000;
+}
+
+.widget
+  .checkbox-field__native:focus-visible
+  + .checkbox-field__label
+  .checkbox-field__box {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.widget .checkbox-field__native:checked + .checkbox-field__label .checkbox-field__box {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.widget .checkbox-field__native:checked + .checkbox-field__label:hover .checkbox-field__box {
+  background: #333;
+  border-color: #333;
+}
+
+.widget .advanced>.field {
   margin-top: 1rem;
 }
 
@@ -280,6 +343,7 @@
 
 .widget .button__text {
   vertical-align: middle;
+  font-family: var(--font-heading);
 }
 
 /* Messages + results */
@@ -327,6 +391,7 @@
 
 .widget .results__row dt {
   margin: 0;
+  font-family: var(--font-heading);
   font-weight: 500;
 }
 

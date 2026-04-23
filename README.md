@@ -15,6 +15,10 @@ Set `VITE_API_BASE_URL` to your API root **including** the version path, for exa
 
 (no trailing slash required)
 
+## Fonts
+
+UI typography matches **gt-app**: headings use **Google Sans**, body uses **Roboto**, self-hosted under `public/font/` (same `.ttf` files as `gt-app/asset/font/`). If those files are missing, copy `GoogleSans-*.ttf` and `Roboto-*.ttf` from gt-app into `public/font/` so `src/fonts.css` can load them.
+
 ## Develop
 
 ```bash
