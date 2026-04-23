@@ -54,17 +54,24 @@
   border-top-color: var(--org-primary);
 }
 
-.widget[data-org='dev'] .results {
-  border-top-color: rgba(226, 56, 63, 0.2);
-}
-
-.widget[data-org='dev'] .results__row--total {
-  border-top-color: rgba(226, 56, 63, 0.2);
-}
-
 .widget[data-org='dev'] .field__control:has(.field__input:not(:disabled)):hover .field__label,
 .widget[data-org='dev'] .field__control:has(.field__input):focus-within .field__label,
 .widget[data-org='dev'] .field__control:has(.field__select:not(:disabled)):hover .field__label,
 .widget[data-org='dev'] .field__control:has(.field__select):focus-within .field__label {
   color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .results__discover {
+  border-top-color: rgba(226, 56, 63, 0.2);
+}
+
+.widget[data-org='dev'] .results__discover-cta {
+  border-color: rgba(226, 56, 63, 0.4);
+  color: #000;
+}
+
+.widget[data-org='dev'] .results__discover-cta:hover {
+  border-color: var(--org-primary);
+  background: var(--org-primary-soft);
+  color: #000;
 }

@@ -19,12 +19,16 @@ example:
 
 (no trailing slash required)
 
+Optionally set **`VITE_DISCOVER_DONATIONS_URL`** for the “Discover how to make tax
+efficient donations” link under the results block (see `.env.example`). If
+unset, a default URL is used.
+
 ## Organization theme (`?org=`)
 
-Add **`?org=dev`** to the page URL to apply the **dev** org theme and logo (gt-app
-`orgs/dev` primary `rgb(226, 56, 63)` and `public/org/dev/logo_en.svg` /
-`logo_fr.svg` by current language). Unknown `org` values fall back to the default
-look. Allowlisted ids live in `src/lib/orgConfig.ts`.
+Add **`?org=dev`** to the page URL to apply the **dev** org theme and logo
+(gt-app `orgs/dev` primary `rgb(226, 56, 63)` and `public/org/dev/logo_en.svg` /
+`logo_fr.svg` by current language). Unknown `org` values fall back to the
+default look. Allowlisted ids live in `src/lib/orgConfig.ts`.
 
 ## Fonts
 

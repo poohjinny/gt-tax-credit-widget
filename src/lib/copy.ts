@@ -20,6 +20,7 @@ type Copy = {
   na: string;
   errorPrefix: string;
   orgLogoAlt: string;
+  discoverDonationsCta: string;
 };
 
 export const COPY: Record<Language, Copy> = {
@@ -50,6 +51,7 @@ export const COPY: Record<Language, Copy> = {
     na: '—',
     errorPrefix: 'Could not calculate:',
     orgLogoAlt: 'Organization logo',
+    discoverDonationsCta: 'Discover how to make tax efficient donations',
   },
   fr: {
     title: 'Découvrez combien votre générosité vous rapporte',
@@ -71,7 +73,7 @@ export const COPY: Record<Language, Copy> = {
       'Si vide, un revenu par défaut sert uniquement au taux fédéral sur la portion supérieure à 200 $.',
     estimateBanner:
       "Vous n'avez pas indiqué de revenu imposable, nous avons donc utilisé un montant type pour appliquer les règles fédérales sur la portion de votre don au-delà de 200 $. " +
-      "Indiquez votre revenu dans le champ facultatif ci-dessus pour une estimation plus proche de votre situation.",
+      'Indiquez votre revenu dans le champ facultatif ci-dessus pour une estimation plus proche de votre situation.',
     incomeUsed: 'Revenu utilisé pour le calcul du crédit',
     federal: 'Crédit fédéral',
     provincial: 'Crédit provincial / territorial',
@@ -79,5 +81,7 @@ export const COPY: Record<Language, Copy> = {
     na: '—',
     errorPrefix: 'Impossible de calculer :',
     orgLogoAlt: "Logo de l'organisme",
+    discoverDonationsCta:
+      'Découvrez comment faire des dons fiscalement avantageux',
   },
 };

@@ -1,6 +1,7 @@
 import { useMemo, useState, type FormEvent } from 'react';
 import { calculateTaxCredit } from './lib/api';
 import { COPY } from './lib/copy';
+import { getDiscoverDonationsUrl } from './lib/discoverUrl';
 import { getOrgLogoSrc, parseOrgFromSearch } from './lib/orgConfig';
 import { PROVINCE_KEYS, provinceLabel } from './lib/provinces';
 import type { Language, TaxCreditData } from './types/taxCredit';
@@ -36,9 +37,9 @@ export default function App() {
 
   const orgId = useMemo(
     () =>
-      typeof window !== 'undefined'
-        ? parseOrgFromSearch(window.location.search)
-        : null,
+      typeof window !== 'undefined' ?
+        parseOrgFromSearch(window.location.search)
+      : null,
     [],
   );
 
@@ -75,7 +76,7 @@ export default function App() {
   return (
     <div className='widget' data-org={orgId ?? undefined}>
       <header className='widget__header'>
-        {orgId ? (
+        {orgId ?
           <div className='widget__logo'>
             <img
               className='widget__logo-img'
@@ -87,7 +88,7 @@ export default function App() {
               decoding='async'
             />
           </div>
-        ) : null}
+        : null}
         <h1 className='widget__title heading heading--primary'>{t.title}</h1>
         <p className='widget__subtitle'>{t.subtitle}</p>
         <p className='widget__disclaimer paragraph' role='note'>
@@ -266,6 +267,16 @@ export default function App() {
               <dd>{formatCad(result.taxCredit.totalTaxCredit, lang)}</dd>
             </div>
           </dl>
+          <div className='results__discover'>
+            <a
+              className='results__discover-cta'
+              href={getDiscoverDonationsUrl()}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {t.discoverDonationsCta}
+            </a>
+          </div>
         </section>
       : null}
     </div>
