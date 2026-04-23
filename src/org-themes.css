@@ -14,7 +14,7 @@
   background-color: var(--org-primary);
 }
 
-/* Same “chin” as default theme: semitransparent *dark* line reads on red fill. */
+/* Dark “chin” reads on red fill; avoid semitransparent same-hue (was invisible). */
 .widget[data-org='dev'] .button.button--submit {
   border-bottom: 6px solid rgba(0, 0, 0, 0.32);
 }
@@ -32,4 +32,39 @@
 .widget[data-org='dev'] .checkbox-field__native:checked+.checkbox-field__label .checkbox-field__box {
   background: var(--org-primary);
   border-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .checkbox-field__native:checked+.checkbox-field__label:hover .checkbox-field__box {
+  background: var(--org-primary-hover);
+  border-color: var(--org-primary-hover);
+}
+
+.widget[data-org='dev'] .field__input:not([disabled]):hover,
+.widget[data-org='dev'] .field__input:not([disabled]):focus {
+  border-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .field__select:not([disabled]):hover,
+.widget[data-org='dev'] .field__select:not([disabled]):focus {
+  border-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .field__select:not(:disabled):focus+.field__select-icon,
+.widget[data-org='dev'] .field:has(.field__select:not(:disabled)):hover .field__select-icon {
+  border-top-color: var(--org-primary);
+}
+
+.widget[data-org='dev'] .results {
+  border-top-color: rgba(226, 56, 63, 0.2);
+}
+
+.widget[data-org='dev'] .results__row--total {
+  border-top-color: rgba(226, 56, 63, 0.2);
+}
+
+.widget[data-org='dev'] .field__control:has(.field__input:not(:disabled)):hover .field__label,
+.widget[data-org='dev'] .field__control:has(.field__input):focus-within .field__label,
+.widget[data-org='dev'] .field__control:has(.field__select:not(:disabled)):hover .field__label,
+.widget[data-org='dev'] .field__control:has(.field__select):focus-within .field__label {
+  color: var(--org-primary);
 }
