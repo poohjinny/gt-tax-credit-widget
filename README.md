@@ -40,6 +40,27 @@ docker build --build-arg VITE_API_BASE_URL=https://example.com/v2.1 -t gt-tax-cr
 docker run -p 8080:80 gt-tax-credit-widget
 ```
 
+## Optional dev proxy (CORS)
+
+If `VITE_API_BASE_URL` points at another host, the browser may block requests
+until **gt-api** CORS allows your dev origin. Alternatively:
+
+1. Set `VITE_DEV_PROXY_TARGET` to your PHP origin (no path), e.g.
+   `http://giftabulatornow.test`.
+2. Set `VITE_API_BASE_URL=/__gt_api` so requests stay on the Vite origin; Vite
+   forwards `/__gt_api/*` to `/v2.1/*` on that host (`vite.config.ts`).
+
+## Publish to GitHub
+
+If `gh` is not logged in yet: `gh auth login`, then from this folder:
+
+```bash
+gh repo create gt-tax-credit-widget --source=. --public --remote=origin --push
+```
+
+Use `--private` if you prefer. Or create an empty repo in the browser, then
+`git remote add origin <url>` and `git push -u origin main`.
+
 ## Repo hygiene
 
 Avoid workspace-wide globs like `**/*` at the project root: they traverse `node_modules` and can appear stuck. Prefer `src/**/*` or specific paths.
