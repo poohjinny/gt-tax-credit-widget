@@ -1,0 +1,162 @@
+.widget {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  text-align: left;
+}
+
+.widget__header {
+  margin-bottom: 1.5rem;
+}
+
+.widget__title {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+}
+
+.widget__subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.widget__disclaimer {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.widget__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 8rem;
+}
+
+.field__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.field__control {
+  font: inherit;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.field__hint {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  line-height: 1.35;
+}
+
+.advanced {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.advanced__legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.advanced__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+}
+
+.submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.msg {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.msg--error {
+  color: #b91c1c;
+}
+
+.msg--info {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+}
+
+.results {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.results__meta {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.results__grid {
+  margin: 0;
+}
+
+.results__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.results__row dt {
+  margin: 0;
+  font-weight: 500;
+}
+
+.results__row dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.results__row--total {
+  margin-top: 0.35rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+}
