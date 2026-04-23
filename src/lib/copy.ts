@@ -23,11 +23,13 @@ type Copy = {
 
 export const COPY: Record<Language, Copy> = {
   en: {
-    title: 'Charitable donation tax credit (Canada)',
-    subtitle: 'Illustrative estimate using the same rules as Giftabulator.',
+    title: 'See How Much Your Giving Gives Back',
+    subtitle:
+      'Your kindness changes lives—and it comes with rewarding tax benefits. ' +
+      'Discover how your contributions can go even further for the causes you care about.',
     disclaimer:
-      'This tool is for education only. It is not tax or legal advice. ' +
-      'Consult a qualified professional for your situation.',
+      'This tool provides general guidance for educational use. Actual tax credits may vary. ' +
+      'We recommend consulting a tax advisor for official filings.',
     langLabel: 'Language',
     province: 'Province / territory',
     donation: 'Eligible donation amount ($)',
@@ -47,11 +49,13 @@ export const COPY: Record<Language, Copy> = {
     errorPrefix: 'Could not calculate:',
   },
   fr: {
-    title: "Crédit d'impôt pour don de bienfaisance (Canada)",
-    subtitle: "Estimation indicative selon les mêmes règles que Giftabulator.",
+    title: 'Découvrez combien votre générosité vous rapporte',
+    subtitle:
+      "Votre bienveillance change des vies — et s'accompagne d'avantages fiscaux intéressants. " +
+      'Découvrez comment vos contributions peuvent aller encore plus loin pour les causes qui vous tiennent à cœur.',
     disclaimer:
-      "Cet outil est à titre informatif seulement. Ce n'est pas un conseil fiscal ou juridique. " +
-      'Consultez un professionnel qualifié pour votre situation.',
+      "Cet outil offre des indications générales à des fins éducatives. Les crédits d'impôt réels peuvent varier. " +
+      'Nous recommandons de consulter un fiscaliste pour les déclarations officielles.',
     langLabel: 'Langue',
     province: 'Province ou territoire',
     donation: 'Montant du don admissible ($)',

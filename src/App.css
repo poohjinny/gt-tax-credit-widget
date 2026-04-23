@@ -15,15 +15,16 @@
 .widget__title {
   color: #000;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: clamp(1.2rem, 4.2vw, 1.65rem);
   font-weight: 500;
-  line-height: 1.25;
-  margin: 0 0 0.35rem;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
 }
 
 .widget__subtitle {
-  margin: 0 0 0.75rem;
-  font-size: 0.95rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
   color: #666;
   font-weight: 400;
 }
