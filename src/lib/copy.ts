@@ -1,25 +1,25 @@
-import type { Language } from '../types/taxCredit'
+import type { Language } from '../types/taxCredit';
 
 type Copy = {
-  title: string
-  subtitle: string
-  disclaimer: string
-  langLabel: string
-  province: string
-  donation: string
-  calculate: string
-  calculating: string
-  advanced: string
-  taxableIncome: string
-  taxableIncomeHint: string
-  estimateBanner: string
-  incomeUsed: string
-  federal: string
-  provincial: string
-  total: string
-  na: string
-  errorPrefix: string
-}
+  title: string;
+  subtitle: string;
+  disclaimer: string;
+  langLabel: string;
+  province: string;
+  donation: string;
+  calculate: string;
+  calculating: string;
+  advanced: string;
+  taxableIncome: string;
+  taxableIncomeHint: string;
+  estimateBanner: string;
+  incomeUsed: string;
+  federal: string;
+  provincial: string;
+  total: string;
+  na: string;
+  errorPrefix: string;
+};
 
 export const COPY: Record<Language, Copy> = {
   en: {
@@ -35,7 +35,7 @@ export const COPY: Record<Language, Copy> = {
     donation: 'Eligible donation amount ($)',
     calculate: 'Calculate',
     calculating: 'Calculating…',
-    advanced: 'More accurate (optional taxable income)',
+    advanced: 'Optional: enter your taxable income for a closer estimate',
     taxableIncome: 'Taxable income ($)',
     taxableIncomeHint:
       'When blank, a default income is used only to pick the federal rate over $200.',
@@ -61,7 +61,8 @@ export const COPY: Record<Language, Copy> = {
     donation: 'Montant du don admissible ($)',
     calculate: 'Calculer',
     calculating: 'Calcul en cours…',
-    advanced: "Plus précis (revenu imposable facultatif)",
+    advanced:
+      'Facultatif : indiquez votre revenu imposable pour une estimation plus proche',
     taxableIncome: 'Revenu imposable ($)',
     taxableIncomeHint:
       'Si vide, un revenu par défaut sert uniquement au taux fédéral sur la portion supérieure à 200 $.',
@@ -74,4 +75,4 @@ export const COPY: Record<Language, Copy> = {
     na: '—',
     errorPrefix: 'Impossible de calculer :',
   },
-}
+};
