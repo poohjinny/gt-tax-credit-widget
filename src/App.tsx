@@ -65,7 +65,7 @@ export default function App() {
   return (
     <div className='widget'>
       <header className='widget__header'>
-        <h1 className='widget__title'>{t.title}</h1>
+        <h1 className='widget__title heading heading--primary'>{t.title}</h1>
         <p className='widget__subtitle'>{t.subtitle}</p>
         <p className='widget__disclaimer paragraph' role='note'>
           {t.disclaimer}

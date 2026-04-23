@@ -12,13 +12,21 @@
   margin-bottom: 2rem;
 }
 
-.widget__title {
+/* gt-app `heading.css`: .heading + .heading--primary */
+.widget h1.widget__title.heading {
+  display: block;
+  margin: 0 0 0.5rem;
   color: #000;
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 4.2vw, 1.65rem);
-  font-weight: 500;
-  line-height: 1.2;
-  margin: 0 0 0.5rem;
+  line-height: 1.6;
+  transition:
+    margin 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.widget h1.widget__title.heading--primary {
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 .widget__subtitle {
