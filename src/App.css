@@ -381,12 +381,13 @@
 
 .widget .msg--info {
   margin-bottom: 1.25rem;
-  padding: 0;
+  padding: 1rem 1.5rem;
   color: #666;
   font-size: 0.95rem;
   line-height: 1.55;
-  background: none;
+  background: #fafafa;
   border: none;
+  border-radius: 1rem;
 }
 
 .widget .results {
