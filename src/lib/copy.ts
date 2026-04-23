@@ -41,7 +41,8 @@ export const COPY: Record<Language, Copy> = {
     taxableIncomeHint:
       'When blank, a default income is used only to pick the federal rate over $200.',
     estimateBanner:
-      'Estimate mode: taxable income was not provided; a default amount is used for the federal bracket over $200.',
+      "You haven't entered taxable income, so we used a typical amount to apply the federal rules for the part of your gift over $200. " +
+      'Add your income in the optional field above if you want a result closer to your situation.',
     incomeUsed: 'Income used for credit calculation',
     federal: 'Federal credit',
     provincial: 'Provincial / territorial credit',
@@ -69,7 +70,8 @@ export const COPY: Record<Language, Copy> = {
     taxableIncomeHint:
       'Si vide, un revenu par défaut sert uniquement au taux fédéral sur la portion supérieure à 200 $.',
     estimateBanner:
-      "Mode estimation : le revenu imposable n'a pas été fourni; un montant par défaut sert au palier fédéral au-delà de 200 $.",
+      "Vous n'avez pas indiqué de revenu imposable, nous avons donc utilisé un montant type pour appliquer les règles fédérales sur la portion de votre don au-delà de 200 $. " +
+      "Indiquez votre revenu dans le champ facultatif ci-dessus pour une estimation plus proche de votre situation.",
     incomeUsed: 'Revenu utilisé pour le calcul du crédit',
     federal: 'Crédit fédéral',
     provincial: 'Crédit provincial / territorial',

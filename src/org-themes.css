@@ -53,12 +53,6 @@
   border-top-color: var(--org-primary);
 }
 
-.widget[data-org='dev'] .msg--info {
-  background: var(--org-primary-soft);
-  border: 1px solid rgba(226, 56, 63, 0.2);
-  border-radius: 1rem;
-}
-
 .widget[data-org='dev'] .results {
   border-top-color: rgba(226, 56, 63, 0.2);
 }
