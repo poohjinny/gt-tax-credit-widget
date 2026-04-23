@@ -39,6 +39,9 @@ export default function App() {
     return Number.isFinite(n) && n > 0 ? n : undefined
   }, [advanced, incomeRaw])
 
+  const donationFilled = donationRaw.trim().length > 0
+  const incomeFilled = incomeRaw.trim().length > 0
+
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
     setError(null)
@@ -70,47 +73,69 @@ export default function App() {
       </header>
 
       <form className="widget__form" onSubmit={onSubmit}>
-        <div className="field-row">
-          <label className="field">
-            <span className="field__label">{t.langLabel}</span>
-            <select
-              className="field__control"
-              value={lang}
-              onChange={(e) => setLang(e.target.value as Language)}
-            >
-              <option value="en">English</option>
-              <option value="fr">Français</option>
-            </select>
-          </label>
+        <div className="field">
+          <div className="field__control" data-orientation="vertical">
+            <label className="field__label" htmlFor="widget-lang">
+              {t.langLabel}
+            </label>
+            <div className="field__select-container">
+              <select
+                id="widget-lang"
+                className="field__select"
+                data-selected=""
+                value={lang}
+                onChange={(e) => setLang(e.target.value as Language)}
+              >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+              </select>
+              <span className="field__select-icon" aria-hidden="true" />
+            </div>
+          </div>
         </div>
 
-        <label className="field">
-          <span className="field__label">{t.province}</span>
-          <select
-            className="field__control"
-            value={province}
-            onChange={(e) => setProvince(e.target.value)}
-          >
-            {PROVINCE_KEYS.map((code) => (
-              <option key={code} value={code}>
-                {provinceLabel(code, lang)}
-              </option>
-            ))}
-          </select>
-        </label>
+        <div className="field">
+          <div className="field__control" data-orientation="vertical">
+            <label className="field__label" htmlFor="widget-province">
+              {t.province}
+            </label>
+            <div className="field__select-container">
+              <select
+                id="widget-province"
+                className="field__select"
+                data-selected=""
+                value={province}
+                onChange={(e) => setProvince(e.target.value)}
+              >
+                {PROVINCE_KEYS.map((code) => (
+                  <option key={code} value={code}>
+                    {provinceLabel(code, lang)}
+                  </option>
+                ))}
+              </select>
+              <span className="field__select-icon" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
 
-        <label className="field">
-          <span className="field__label">{t.donation}</span>
-          <input
-            className="field__control"
-            inputMode="decimal"
-            value={donationRaw}
-            onChange={(e) => setDonationRaw(e.target.value)}
-            min={0}
-          />
-        </label>
+        <div className="field">
+          <div className="field__control" data-orientation="vertical">
+            <label className="field__label" htmlFor="widget-donation">
+              {t.donation}
+            </label>
+            <input
+              id="widget-donation"
+              className="field__input"
+              type="text"
+              inputMode="decimal"
+              value={donationRaw}
+              onChange={(e) => setDonationRaw(e.target.value)}
+              {...(donationFilled ? { 'data-filled': '' } : {})}
+            />
+          </div>
+        </div>
 
-        <fieldset className="advanced">
+        <fieldset className="fieldset advanced">
           <legend className="advanced__legend">
             <label className="advanced__toggle">
               <input
@@ -118,27 +143,43 @@ export default function App() {
                 checked={advanced}
                 onChange={(e) => setAdvanced(e.target.checked)}
               />
-              <span>{t.advanced}</span>
+              <span className="advanced__toggle-text">{t.advanced}</span>
             </label>
           </legend>
           {advanced ? (
-            <label className="field">
-              <span className="field__label">{t.taxableIncome}</span>
-              <input
-                className="field__control"
-                inputMode="decimal"
-                value={incomeRaw}
-                onChange={(e) => setIncomeRaw(e.target.value)}
-                placeholder=""
-              />
-              <span className="field__hint">{t.taxableIncomeHint}</span>
-            </label>
+            <div className="field">
+              <div className="field__control" data-orientation="vertical">
+                <label className="field__label" htmlFor="widget-income">
+                  {t.taxableIncome}
+                </label>
+                <input
+                  id="widget-income"
+                  className="field__input"
+                  type="text"
+                  inputMode="decimal"
+                  value={incomeRaw}
+                  onChange={(e) => setIncomeRaw(e.target.value)}
+                  {...(incomeFilled ? { 'data-filled': '' } : {})}
+                />
+              </div>
+              <p className="field__description field__description--static">
+                <span className="field__description-text">{t.taxableIncomeHint}</span>
+              </p>
+            </div>
           ) : null}
         </fieldset>
 
-        <button className="submit" type="submit" disabled={loading}>
-          {loading ? t.calculating : t.calculate}
-        </button>
+        <div className="widget__submit-wrap">
+          <button
+            type="submit"
+            className="button button--submit button--center"
+            disabled={loading}
+          >
+            <span className="button__text">
+              {loading ? t.calculating : t.calculate}
+            </span>
+          </button>
+        </div>
       </form>
 
       {error ? (

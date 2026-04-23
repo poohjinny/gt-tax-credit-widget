@@ -7,7 +7,7 @@
   --accent-bg: rgba(37, 99, 235, 0.08);
   --accent-border: rgba(37, 99, 235, 0.35);
 
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: Roboto, system-ui, 'Segoe UI', sans-serif;
   line-height: 1.5;
   color: var(--text);
   background: var(--bg);
