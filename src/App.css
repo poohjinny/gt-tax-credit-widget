@@ -228,7 +228,7 @@
 
 .widget .checkbox-field {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   max-width: 100%;
 }
 
@@ -246,7 +246,7 @@
 
 .widget .checkbox-field__label {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
   cursor: pointer;
   user-select: none;
@@ -257,7 +257,6 @@
   box-sizing: border-box;
   width: 1.35rem;
   height: 1.35rem;
-  margin-top: 0.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,7 +277,7 @@
   font-family: var(--font-body);
   font-size: 0.98rem;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.35;
   color: #000;
 }
 
