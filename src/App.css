@@ -354,6 +354,7 @@
 }
 
 .widget .msg--info {
+  margin-bottom: 1.25rem;
   padding: 1rem 1.5rem;
   background: #fafafa;
   border-radius: 1rem;
